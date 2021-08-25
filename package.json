@@ -1,8 +1,7 @@
 {
-  "name": "electron-react-typescript",
-  "author": "Diego Fernandes <diego.schell.f@gmail.com>",
-  "version": "2.0.0",
-  "description": "An Electron boilerplate including TypeScript, React, Jest and ESLint.",
+  "name": "set",
+  "author": "5tarlight <developerstarlight@gmail.com>",
+  "version": "21.0.0",
   "main": "./.webpack/main/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -64,8 +63,8 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "Electron starter",
-        "executableName": "electron-starter",
+        "name": "set",
+        "executableName": "set",
         "icon": "assets/icon",
         "extraResource": [
           "assets"
