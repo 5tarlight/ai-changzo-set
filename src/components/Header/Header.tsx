@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
+import Logo from './Logo'
 
 interface Props {}
 
@@ -10,7 +11,11 @@ const Container = styled.div`
 `
 
 const Header: FC<Props> = () => {
-  return <Container />
+  return (
+    <Container>
+      <Logo />
+    </Container>
+  )
 }
 
 export default Header
