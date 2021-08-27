@@ -16,7 +16,8 @@ const Header: FC<Props> = () => {
     <Container>
       <Logo />
 
-      <HeaderItem to="login" value="로그인" />
+      <HeaderItem to="/login" value="로그인" />
+      <HeaderItem to="/help" value="Help" />
     </Container>
   )
 }

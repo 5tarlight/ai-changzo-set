@@ -1,20 +1,20 @@
 import { FC, MouseEvent as ME } from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
+import hashHistory from '../../hashHistory'
 
 const Container = styled.div`
   color: white;
   font-size: 50px;
   line-height: 60px;
   height: fit-content;
-  width: fit-content;
+  float: left;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 100px;
 
   &:hover {
     cursor: pointer;
@@ -22,13 +22,11 @@ const Container = styled.div`
 `
 
 const Logo: FC<{}> = () => {
-  const history = useHistory()
-
   const handleClick = (e: ME<HTMLDivElement, MouseEvent>) => {
     e.preventDefault()
     e.stopPropagation()
 
-    history.push('/')
+    hashHistory.push('/')
   }
 
   return (
