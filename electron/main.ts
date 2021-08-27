@@ -1,4 +1,12 @@
-import { app, BrowserWindow, ipcMain } from 'electron'
+import {
+  app,
+  BrowserWindow,
+  ipcMain,
+  Menu,
+  MenuItemConstructorOptions,
+  MenuItem,
+} from 'electron'
+import isDev from 'electron-is-dev'
 
 let mainWindow: BrowserWindow | null
 
@@ -10,17 +18,17 @@ declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string
 //     ? process.resourcesPath
 //     : app.getAppPath()
 
-function createWindow () {
+function createWindow() {
   mainWindow = new BrowserWindow({
     // icon: path.join(assetsPath, 'assets', 'icon.png'),
     width: 1100,
     height: 700,
-    backgroundColor: '#191622',
+    resizable: false,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
-    }
+      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+    },
   })
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
@@ -28,9 +36,30 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
+  const template: (MenuItemConstructorOptions | MenuItem)[] = []
+
+  if (isDev) {
+    template.push({
+      label: 'Dev',
+      submenu: [
+        {
+          label: 'Toggle Developer Tools',
+          accelerator:
+            process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
+          click(item, focusedWindow) {
+            if (focusedWindow) focusedWindow.webContents.toggleDevTools()
+          },
+        },
+      ],
+    })
+  }
+
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
 }
 
-async function registerListeners () {
+async function registerListeners() {
   /**
    * This comes from bridge integration, check bridge.ts
    */
@@ -39,7 +68,8 @@ async function registerListeners () {
   })
 }
 
-app.on('ready', createWindow)
+app
+  .on('ready', createWindow)
   .whenReady()
   .then(registerListeners)
   .catch(e => console.error(e))
