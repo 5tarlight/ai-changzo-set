@@ -1,13 +1,20 @@
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
-import HelloWorld from './components/HelloWorld/HelloWorld'
+import Home from './pages/Home'
 import { GlobalStyle } from './styles/GlobalStyle'
 
 export function App() {
+  console.log(window.location.href)
+
   return (
     <>
       <Header />
       <GlobalStyle />
-      <HelloWorld />
+      <HashRouter>
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </HashRouter>
     </>
   )
 }
