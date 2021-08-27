@@ -1,4 +1,12 @@
-import { app, BrowserWindow, ipcMain, Menu } from 'electron'
+import {
+  app,
+  BrowserWindow,
+  ipcMain,
+  Menu,
+  MenuItemConstructorOptions,
+  MenuItem,
+} from 'electron'
+import isDev from 'electron-is-dev'
 
 let mainWindow: BrowserWindow | null
 
@@ -29,7 +37,25 @@ function createWindow() {
     mainWindow = null
   })
 
-  const menu = new Menu()
+  const template: (MenuItemConstructorOptions | MenuItem)[] = []
+
+  if (isDev) {
+    template.push({
+      label: 'Dev',
+      submenu: [
+        {
+          label: 'Toggle Developer Tools',
+          accelerator:
+            process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
+          click(item, focusedWindow) {
+            if (focusedWindow) focusedWindow.webContents.toggleDevTools()
+          },
+        },
+      ],
+    })
+  }
+
+  const menu = Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(menu)
 }
 
