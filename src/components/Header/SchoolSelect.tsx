@@ -5,8 +5,7 @@ import School from '../../shcool/School'
 interface Props {}
 
 const Select = styled.select`
-  float: right;
-  margin-top: 24px;
+  display: inline-block;
 `
 
 const SchoolSelect: FC<Props> = () => {

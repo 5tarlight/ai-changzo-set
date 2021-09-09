@@ -5,7 +5,7 @@ import hashHistory from '../../hashHistory'
 const Container = styled.div`
   color: white;
   font-size: 50px;
-  line-height: 60px;
+  line-height: 64px;
   height: fit-content;
   float: left;
   -webkit-user-select: none;
