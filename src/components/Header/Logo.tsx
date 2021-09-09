@@ -1,5 +1,4 @@
 import { FC, MouseEvent as ME } from 'react'
-import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import hashHistory from '../../hashHistory'
 
