@@ -2,9 +2,12 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Home from './pages/Home'
 import { GlobalStyle } from './styles/GlobalStyle'
+import { useState } from 'react'
 
 export function App() {
-  console.log(window.location.href)
+  const [id, setId] = useState('12345')
+
+  const login = (newId: string) => {}
 
   return (
     <>
