@@ -1,7 +1,7 @@
+import { useState, useEffect } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import { GlobalStyle } from './styles/GlobalStyle'
-import { useState } from 'react'
 import HelloWorld from './components/HelloWorld/HelloWorld'
 
 export interface Id {
@@ -11,11 +11,20 @@ export interface Id {
 }
 
 export function App() {
-  const [id, setId] = useState<Id>({
+  const [id, setRawId] = useState<Id>({
     grade: -1,
     clazz: -1,
     no: -1,
   })
+
+  const setId = (id: Id) => {
+    localStorage.setItem('grade', id.grade.toString())
+    localStorage.setItem('class', id.clazz.toString())
+    localStorage.setItem('no', id.no.toString())
+
+    setRawId(id)
+  }
+
   const [logged, setLogged] = useState(false)
 
   const login = (newId: string) => {
@@ -34,6 +43,30 @@ export function App() {
 
     setLogged(true)
   }
+
+  useEffect(() => {
+    const grade = localStorage.getItem('grade')
+    const clazz = localStorage.getItem('class')
+    const no = localStorage.getItem('no')
+
+    let gradeNo, classNo, noNo
+
+    if (grade === null || clazz === null || no === null) return
+
+    try {
+      gradeNo = parseInt(grade)
+      classNo = parseInt(clazz)
+      noNo = parseInt(no)
+
+      setId({
+        grade: gradeNo,
+        clazz: classNo,
+        no: noNo,
+      })
+    } catch (e: any) {
+      return
+    }
+  }, [])
 
   return (
     <>
