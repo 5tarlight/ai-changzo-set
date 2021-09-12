@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import styled from 'styled-components'
 import { Id } from '../../App'
+import { isValidId } from '../../util'
 
 interface Props {
   id: Id
@@ -18,7 +19,7 @@ const HelloWorld: FC<Props> = ({ id: { clazz, grade, no } }) => {
 
   return (
     <Hello>
-      {clazz === -1 || grade === -1 || no === -1
+      {isValidId({ clazz, grade, no })
         ? '학번을 입력하세요.'
         : grade + parseNum(clazz) + parseNum(no)}
     </Hello>
