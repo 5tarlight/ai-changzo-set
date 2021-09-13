@@ -58,6 +58,10 @@ export const Subject = {
   COMPUTER_INFORMATION: '정보',
   SECOND_FOREIGN_LANG: '제 2외국어',
   CHINESE_CHAR: '한문',
+
+  isValid(name: string) {
+    return Object.values(Subject).includes(name)
+  },
 }
 
 export interface Time {
