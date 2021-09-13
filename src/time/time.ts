@@ -62,4 +62,14 @@ export const Subject = {
 
 export interface Time {
   subject: string
+  startAt: string
+  endAt: string
+}
+
+export interface TimeTable {
+  MON: Time[]
+  TUE: Time[]
+  WED: Time[]
+  THU: Time[]
+  FRI: Time[]
 }
