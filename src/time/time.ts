@@ -58,6 +58,11 @@ export const Subject = {
   COMPUTER_INFORMATION: '정보',
   SECOND_FOREIGN_LANG: '제 2외국어',
   CHINESE_CHAR: '한문',
+  CREATIVE_EXP: '창체',
+  SELF_GOVERN: '자치',
+  CAREER: '진로',
+
+  LUNCH: '점심',
 
   isValid(name: string) {
     return Object.values(Subject).includes(name)
@@ -71,9 +76,9 @@ export interface Time {
 }
 
 export interface TimeTable {
-  MON: Time[]
-  TUE: Time[]
-  WED: Time[]
-  THU: Time[]
-  FRI: Time[]
+  MON: string[]
+  TUE: string[]
+  WED: string[]
+  THU: string[]
+  FRI: string[]
 }
