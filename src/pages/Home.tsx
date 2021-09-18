@@ -1,9 +1,17 @@
 import { FC } from 'react'
 import HelloWorld from '../components/HelloWorld/HelloWorld'
+import { Id } from "../App";
+import TimeTable from "../components/TimeTable/TimeTable";
 
-const Home: FC<{}> = () => (
+interface Props {
+  id: Id
+  school: string
+}
+
+const Home: FC<Props> = ({ id, school }) => (
   <>
-    <HelloWorld />
+    <HelloWorld id={id} />
+    <TimeTable id={id} school={school} />
   </>
 )
 

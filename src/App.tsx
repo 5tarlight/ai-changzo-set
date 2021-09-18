@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import { GlobalStyle } from './styles/GlobalStyle'
-import HelloWorld from './components/HelloWorld/HelloWorld'
+import Home from "./pages/Home";
 
 export interface Id {
   grade: number
@@ -16,6 +16,8 @@ export function App() {
     clazz: -1,
     no: -1,
   })
+
+  const [school, setSchool] = useState('')
 
   const setId = (id: Id) => {
     localStorage.setItem('grade', id.grade.toString())
@@ -45,11 +47,20 @@ export function App() {
   }
 
   useEffect(() => {
+    if (localStorage.getItem('school'))
+      setSchool(localStorage.getItem('school') || 'HYUH')
+    else {
+      localStorage.setItem('school', 'HYUH')
+      setSchool('HYUH')
+    }
+
     const grade = localStorage.getItem('grade')
     const clazz = localStorage.getItem('class')
     const no = localStorage.getItem('no')
 
-    let gradeNo, classNo, noNo
+    let gradeNo: number
+    let classNo: number
+    let noNo: number
 
     if (grade === null || clazz === null || no === null) return
 
@@ -64,7 +75,7 @@ export function App() {
         no: noNo,
       })
     } catch (e: any) {
-      return
+      console.error('not valid student no')
     }
   }, [])
 
@@ -74,7 +85,7 @@ export function App() {
       <GlobalStyle />
       <HashRouter>
         <Switch>
-          <Route path="/" exact component={() => <HelloWorld id={id} />} />
+          <Route path="/" exact component={() => <Home id={id} school={school} />} />
         </Switch>
       </HashRouter>
     </>
