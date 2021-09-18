@@ -2,7 +2,7 @@ import { FC } from 'react'
 import styled from 'styled-components'
 import { Id } from '../../App'
 import { isValidId } from '../../util'
-import {isValidSchool} from "../../shcool/School";
+import { isValidSchool } from '../../shcool/School'
 
 interface Props {
   id: Id

@@ -1,8 +1,7 @@
-import {FC, useEffect, useState} from 'react'
+import { FC, useState } from 'react'
 import styled from 'styled-components'
 import ClassInput from './ClassInput'
 import LoginBtn from './LoginBtn'
-// import HeaderItem from './HeaderItem'
 import Logo from './Logo'
 import SchoolSelect from './SchoolSelect'
 
@@ -10,6 +9,8 @@ interface Props {
   logged: boolean
   id?: string
   saveClass(clazz: string): void
+  school: string
+  setSchool(str: string): any
 }
 
 const Container = styled.div`
@@ -24,7 +25,7 @@ const InputSec = styled.div`
   margin-right: 20px;
 `
 
-const Header: FC<Props> = ({ logged, saveClass, id }) => {
+const Header: FC<Props> = ({ saveClass, id, school, setSchool }) => {
   const [classNo, setClass] = useState('')
 
   return (
@@ -35,7 +36,7 @@ const Header: FC<Props> = ({ logged, saveClass, id }) => {
         {/* <HeaderItem to="/login" value="로그인" /> */}
         {/* <HeaderItem to="/help" value="Help" /> */}(
         <>
-          <SchoolSelect />
+          <SchoolSelect school={school} setSchool={setSchool} />
           <ClassInput value={classNo} setValue={setClass} />
           <LoginBtn onClick={() => saveClass(classNo)} />
         </>

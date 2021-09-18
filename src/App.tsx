@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import { GlobalStyle } from './styles/GlobalStyle'
-import Home from "./pages/Home";
+import Home from './pages/Home'
 
 export interface Id {
   grade: number
@@ -81,11 +81,20 @@ export function App() {
 
   return (
     <>
-      <Header saveClass={login} logged={logged} />
+      <Header
+        saveClass={login}
+        logged={logged}
+        school={school}
+        setSchool={setSchool}
+      />
       <GlobalStyle />
       <HashRouter>
         <Switch>
-          <Route path="/" exact component={() => <Home id={id} school={school} />} />
+          <Route
+            path="/"
+            exact
+            component={() => <Home id={id} school={school} />}
+          />
         </Switch>
       </HashRouter>
     </>

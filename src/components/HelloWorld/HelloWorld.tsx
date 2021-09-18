@@ -20,8 +20,8 @@ const HelloWorld: FC<Props> = ({ id: { clazz, grade, no } }) => {
   return (
     <Hello>
       {isValidId({ clazz, grade, no })
-        ? '학번을 입력하세요.'
-        : grade + parseNum(clazz) + parseNum(no)}
+        ? grade + parseNum(clazz) + parseNum(no)
+        : '학번을 입력하세요.'}
     </Hello>
   )
 }

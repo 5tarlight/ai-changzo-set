@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import HelloWorld from '../components/HelloWorld/HelloWorld'
-import { Id } from "../App";
-import TimeTable from "../components/TimeTable/TimeTable";
+import { Id } from '../App'
+import TimeTable from '../components/TimeTable/TimeTable'
 
 interface Props {
   id: Id
