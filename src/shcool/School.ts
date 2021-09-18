@@ -3,6 +3,10 @@ const School = {
     code: 'HYUH',
     name: '한양대학교사범대학부속고등학교',
   },
+  TEST: {
+    code: 'TEST',
+    name: '시범고등학교',
+  },
 }
 
 export const isValidSchool = (str: string | null) => {
