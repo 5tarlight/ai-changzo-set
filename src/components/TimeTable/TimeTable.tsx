@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Id } from '../../App'
 import { isValidId } from '../../util'
 import { isValidSchool } from '../../shcool/School'
-import { getSchoolTimeTable } from '../../time/times'
+import { getSchoolTimeTable, getTodayTime } from '../../time/times'
 
 interface Props {
   id: Id
@@ -11,6 +11,7 @@ interface Props {
 }
 
 const Container = styled.div``
+const Element = styled.div``
 const SchoolError = styled.div``
 
 const TimeTable: FC<Props> = ({ id: { clazz, grade, no }, school }) => {
@@ -22,18 +23,22 @@ const TimeTable: FC<Props> = ({ id: { clazz, grade, no }, school }) => {
     }
 
     const timeTable = getSchoolTimeTable(school)
+    const notFound = <Container>등록된 시간표가 없습니다.</Container>
 
     if (
       !timeTable ||
       timeTable.length < grade ||
       timeTable[grade - 1].length < clazz
     ) {
-      return <Container>등록된 시간표가 없습니다.</Container>
+      return notFound
     }
 
-    console.log(timeTable[grade - 1][clazz - 1])
+    const table = getTodayTime(timeTable[grade - 1][clazz - 1])
+    if (!table) return notFound
 
-    return <Container>Load Successful</Container>
+    const tables = table.map((t, i) => <Element key={i}>{t}</Element>)
+
+    return <Container>{tables}</Container>
   } else {
     return <>login first</>
   }
