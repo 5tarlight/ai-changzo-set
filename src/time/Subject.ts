@@ -1,4 +1,4 @@
-export const Subject = {
+const Subject = {
   COMMON_KOREAN: '공통 국어',
   SPEACH_WRITE: '화법과 작문',
   READING: '독서',
@@ -69,16 +69,4 @@ export const Subject = {
   },
 }
 
-export interface Time {
-  subject: string
-  startAt: string
-  endAt: string
-}
-
-export interface TimeTable {
-  MON: string[]
-  TUE: string[]
-  WED: string[]
-  THU: string[]
-  FRI: string[]
-}
+export default Subject

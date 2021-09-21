@@ -1,31 +1,32 @@
-import { Subject, TimeTable } from './time'
+import { TimeTable } from './times'
+import Subject from './Subject'
 
 const HYUH: TimeTable[][] = [
   [
     // 1st grade
     {
       // 1
-      MON: [],
-      TUE: [],
-      WED: [],
-      THU: [],
-      FRI: [],
+      MON: [Subject.COMMON_KOREAN],
+      TUE: [Subject.COMMON_KOREAN],
+      WED: [Subject.COMMON_KOREAN],
+      THU: [Subject.COMMON_KOREAN],
+      FRI: [Subject.COMMON_KOREAN],
     },
     {
       // 2
-      MON: [],
-      TUE: [],
-      WED: [],
-      THU: [],
-      FRI: [],
+      MON: [Subject.COMMON_KOREAN],
+      TUE: [Subject.COMMON_KOREAN],
+      WED: [Subject.COMMON_KOREAN],
+      THU: [Subject.COMMON_KOREAN],
+      FRI: [Subject.COMMON_KOREAN],
     },
     {
       // 3
-      MON: [],
-      TUE: [],
-      WED: [],
-      THU: [],
-      FRI: [],
+      MON: [Subject.COMMON_KOREAN],
+      TUE: [Subject.COMMON_KOREAN],
+      WED: [Subject.COMMON_KOREAN],
+      THU: [Subject.COMMON_KOREAN],
+      FRI: [Subject.COMMON_KOREAN],
     },
     {
       // 4
@@ -75,6 +76,12 @@ const HYUH: TimeTable[][] = [
       ],
     },
   ],
+  // [
+  //   // 2nd grade
+  // ],
+  // [
+  //   // 3rd grade
+  // ],
 ]
 
 export default HYUH
