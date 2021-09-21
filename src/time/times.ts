@@ -97,3 +97,28 @@ export const getSchoolTimeTable = (school: string): TimeTable[][] | null => {
       return null
   }
 }
+
+export const getToday = () => {
+  const day = new Date().getDay()
+  return ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'][day - 1]
+}
+
+export const getTodayTime = (table: TimeTable) => {
+  const day = getToday()
+
+  switch (day) {
+    case 'MON':
+      return table.MON
+    case 'TUE':
+      return table.TUE
+    case 'WED':
+      return table.WED
+    case 'THU':
+      return table.THU
+    case 'FRI':
+      return table.FRI
+
+    default:
+      return null
+  }
+}
