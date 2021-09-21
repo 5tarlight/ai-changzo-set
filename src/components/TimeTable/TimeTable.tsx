@@ -10,7 +10,9 @@ interface Props {
   school: string
 }
 
-const Container = styled.div``
+const Container = styled.div`
+  margin-top: 20px;
+`
 const Element = styled.div``
 const SchoolError = styled.div``
 
