@@ -26,7 +26,12 @@ const InputSec = styled.div`
 `
 
 const Header: FC<Props> = ({ saveClass, id, school, setSchool }) => {
-  const [classNo, setClass] = useState('')
+  const filterId = (id?: string) => {
+    if (!id || id.includes('-1')) return ''
+    else return id
+  }
+
+  const [classNo, setClass] = useState(filterId(id))
 
   return (
     <Container>
