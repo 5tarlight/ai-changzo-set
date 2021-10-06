@@ -103,6 +103,11 @@ export const getToday = () => {
   return ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'][day - 1]
 }
 
+export const getTodayKo = () => {
+  const day = new Date().getDay()
+  return ['월', '화', '수', '목', '금', '토', '일'][day - 1]
+}
+
 export const getTodayTime = (table: TimeTable) => {
   const day = getToday()
 

@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styled from 'styled-components'
-import { getToday } from '../../time/times'
+import { getToday, getTodayKo } from '../../time/times'
 
 interface Props {}
 interface State {
@@ -8,8 +8,12 @@ interface State {
 }
 
 const Container = styled.div`
+  font-size: 36px;
+`
+const DateContainer = styled.div`
   font-size: 24px;
 `
+const TimeContainer = styled.div``
 
 class Clock extends Component<Props, State> {
   initialDate = new Date()
@@ -18,21 +22,32 @@ class Clock extends Component<Props, State> {
     this.initialDate.getMonth() + 1
   }.${this.initialDate.getDate()}`
 
+  today = getTodayKo()
+
   intervalId: any = null
 
   state = {
     time: '',
   }
 
+  formatTime(time: number) {
+    if (time < 10) return `0${time}`
+    else return `${time}`
+  }
+
   componentDidMount() {
     this.setState({
-      time: `${this.initialDate.getHours()}:${this.initialDate.getMinutes()}:${this.initialDate.getSeconds()}`,
+      time: `${this.formatTime(this.initialDate.getHours())}:${this.formatTime(
+        this.initialDate.getMinutes()
+      )}:${this.formatTime(this.initialDate.getSeconds())}`,
     })
 
     this.intervalId = setInterval(() => {
       const date = new Date()
       this.setState({
-        time: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
+        time: `${this.formatTime(date.getHours())}:${this.formatTime(
+          date.getMinutes()
+        )}:${this.formatTime(date.getSeconds())}`,
       })
     }, 1000)
   }
@@ -48,11 +63,12 @@ class Clock extends Component<Props, State> {
     } = this
 
     return (
-      <>
-        <Container>
-          {date} {time} ({getToday()})
-        </Container>
-      </>
+      <Container>
+        <DateContainer>
+          {date} ({this.today})
+        </DateContainer>
+        <TimeContainer>{time}</TimeContainer>
+      </Container>
     )
   }
 }
