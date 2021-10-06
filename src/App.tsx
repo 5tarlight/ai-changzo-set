@@ -31,6 +31,7 @@ export function App() {
 
   const login = (newId: string) => {
     if (newId.trim().length !== 5) return
+
     const grade = parseInt(newId.slice(0, 1))
     const clazz = parseInt(newId.slice(1, 3))
     const no = parseInt(newId.slice(3, 5))
@@ -86,6 +87,7 @@ export function App() {
         logged={logged}
         school={school}
         setSchool={setSchool}
+        id={`${id.grade}${id.grade}${id.no}`}
       />
       <GlobalStyle />
       <HashRouter>

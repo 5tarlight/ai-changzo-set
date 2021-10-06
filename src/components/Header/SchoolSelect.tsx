@@ -28,6 +28,7 @@ const SchoolSelect: FC<Props> = ({ setSchool, school }) => {
           target: { value },
         } = e
         localStorage.setItem('school', value)
+        setSchool(value)
       }}
     >
       {Options}
