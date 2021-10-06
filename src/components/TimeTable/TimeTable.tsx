@@ -13,7 +13,7 @@ interface Props {
 const Container = styled.div`
   margin-top: 20px;
 `
-const Element = styled.div``
+const Element = styled.div`` // TODO : Replace with TimeCell component
 const SchoolError = styled.div``
 
 const TimeTable: FC<Props> = ({ id: { clazz, grade, no }, school }) => {
