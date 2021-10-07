@@ -38,7 +38,11 @@ const TimeTable: FC<Props> = ({ id: { clazz, grade, no }, school }) => {
     const table = getTodayTime(timeTable[grade - 1][clazz - 1])
     if (!table) return notFound
 
-    const tables = table.map((t, i) => <Element key={i}>{t}</Element>)
+    const tables = table.map((t, i) => (
+      <Element key={i}>
+        {i + 1}. {t}
+      </Element>
+    ))
 
     return <Container>{tables}</Container>
   } else {
