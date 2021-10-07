@@ -1898,10 +1898,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@snyk/protect@1.713.0":
-  version "1.713.0"
-  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.713.0.tgz#ccca80b4e22ef5326e64615b1999b2e90a833022"
-  integrity sha512-AgSx8PIGwD8oT4pZT1Wwlh6wL8/ZStBb65qVDaB6HxubIkrUKcHFHQGskvOL3+pkxXu678bkt0cCEW3E2Dn3VA==
+"@snyk/protect@1.715.0":
+  version "1.715.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.715.0.tgz#e4812dd4466cdd5784d62ccfb87f51e33a4db50d"
+  integrity sha512-pXPaE+Ae1rxrtAuDuo2+hyB/t1SYPQmpDtoVXjR8IjejVjcBieL8s5go18bcsIjcbwuFI+r8Tbsy4L+I3+Feyw==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
