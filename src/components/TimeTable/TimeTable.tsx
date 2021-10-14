@@ -8,15 +8,33 @@ import { getSchoolTimeTable, getTodayTime } from '../../time/times'
 interface Props {
   id: Id
   school: string
+  curTime: number
+}
+
+interface ElementProps {
+  done: boolean
+  current?: boolean
 }
 
 const Container = styled.div`
   margin-top: 20px;
 `
-const Element = styled.div`` // TODO : Replace with TimeCell component
+const Element = styled.div<ElementProps>`
+  ${({ done }) => {
+    if (done) return 'color: #b4b4b4;'
+  }}
+
+  ${({ current }) => {
+    if (current) return 'color: orange;'
+  }}
+` // TODO : Replace with TimeCell component
 const SchoolError = styled.div``
 
-const TimeTable: FC<Props> = ({ id: { clazz, grade, no }, school }) => {
+const TimeTable: FC<Props> = ({
+  id: { clazz, grade, no },
+  school,
+  curTime,
+}) => {
   if (isValidId({ grade, clazz, no })) {
     console.log(school)
 
@@ -39,7 +57,7 @@ const TimeTable: FC<Props> = ({ id: { clazz, grade, no }, school }) => {
     if (!table) return notFound
 
     const tables = table.map((t, i) => (
-      <Element key={i}>
+      <Element key={i} done={i < curTime - 1} current={i == curTime - 1}>
         {i + 1}. {t}
       </Element>
     ))
