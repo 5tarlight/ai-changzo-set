@@ -1898,10 +1898,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@snyk/protect@1.716.0":
-  version "1.716.0"
-  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.716.0.tgz#ea92a7a2eacf52aab5a274401a7abd9261707017"
-  integrity sha512-viNhoGwJQPwhqZjjzyScYHysGeLPk4k2HZgMjChR5W49z+GNd+9y3EOv4gJKsM6GbXAcRjlOptiBihfHpRFlaw==
+"@snyk/protect@1.720.0":
+  version "1.720.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.720.0.tgz#8a32dd57d84ef628c78dd7a2fbe2440b432ed4af"
+  integrity sha512-6PfU2ziqhsi3SRYaRW6gGKYMolIoOrnOgVusSBFkcvpZxSShtMiuIi+pAa3PA9D9gE2BMnF3noWZsQjQXvmTPQ==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -2193,10 +2193,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.3.tgz#6d327abaa4be34a74e421ed6409a0ae2f47f4c3d"
   integrity sha512-e6ZowgGJmTuXa3GyaPbTGxX17tnThl2aSSizrFthQ7m9uLGZBXiGhgE55cjRZTF5kjZvYn9EOPOMljdjwbflxw==
 
-"@types/node@^16.9.4":
-  version "16.9.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.9.4.tgz#a12f0ee7847cf17a97f6fdf1093cb7a9af23cca4"
-  integrity sha512-KDazLNYAGIuJugdbULwFZULF9qQ13yNWEBFnfVpqlpgAAo6H/qnM9RjBgh0A0kmHf3XxAKLdN5mTIng9iUvVLA==
+"@types/node@^16.9.6":
+  version "16.10.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.10.4.tgz#592f12b0b5f357533ddc3310b0176d42ea3e45d1"
+  integrity sha512-EITwVTX5B4nDjXjGeQAfXOrm+Jn+qNjDmyDRtWoD+wZsl/RDPRTFRKivs4Mt74iOFlLOrE5+Kf+p5yjyhm3+cA==
 
 "@types/prettier@^2.1.5":
   version "2.3.0"
