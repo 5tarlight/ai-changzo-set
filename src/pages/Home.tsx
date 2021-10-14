@@ -15,7 +15,7 @@ const Home: FC<Props> = ({ id, school }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setDate(new Date())
-    }, 1000 * 60 * 5)
+    }, 1000 * 60)
     return () => clearInterval(timer)
   }, [])
 
@@ -23,7 +23,7 @@ const Home: FC<Props> = ({ id, school }) => {
     <>
       <HelloWorld id={id} />
       <Clock />
-      <TimeTable id={id} school={school} curTime={calcCurTime(new Date())} />
+      <TimeTable id={id} school={school} curTime={calcCurTime(date)} />
     </>
   )
 }
