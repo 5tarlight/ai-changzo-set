@@ -39,13 +39,12 @@ const Header: FC<Props> = ({ saveClass, id, school, setSchool }) => {
 
       <InputSec>
         {/* <HeaderItem to="/login" value="로그인" /> */}
-        {/* <HeaderItem to="/help" value="Help" /> */}(
+        {/* <HeaderItem to="/help" value="Help" /> */}
         <>
           <SchoolSelect school={school} setSchool={setSchool} />
           <ClassInput value={classNo} setValue={setClass} />
           <LoginBtn onClick={() => saveClass(classNo)} />
         </>
-        )
       </InputSec>
     </Container>
   )

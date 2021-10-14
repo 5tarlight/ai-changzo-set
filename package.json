@@ -16,16 +16,17 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@snyk/protect": "1.720.0",
+    "@types/node": "^16.9.4",
     "@types/node": "^16.9.6",
     "@types/react-router": "^5.1.16",
     "electron-is-dev": "^2.0.0",
+    "file-loader": "^6.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hot-loader": "4.13.0",
     "react-router": "^5.2.1",
-    "styled-components": "5.3.1",
-    "react-router-dom": "^5.2.1"
+    "react-router-dom": "^5.2.1",
+    "styled-components": "5.3.1"
   },
   "devDependencies": {
     "@babel/core": "7.14.6",
