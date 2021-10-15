@@ -22,10 +22,10 @@ const Home: FC<Props> = ({ id, school }) => {
 
   return (
     <>
+      <TableImg grade={id.grade} clazz={id.clazz} />
       <HelloWorld id={id} />
       <Clock />
       <TimeTable id={id} school={school} curTime={calcCurTime(date)} />
-      <TableImg grade={id.grade} clazz={id.clazz} />
     </>
   )
 }
