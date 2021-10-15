@@ -5,14 +5,10 @@ interface Props {
   value: string
 }
 
-const PollContainer = styled.div`
-  margin: 0.5rem 0;
-  font-size: 20px;
-`
+const PollContainer = styled.div``
 
 const Label = styled.div`
-  display: inline-block;
-  width: 50%;
+  font-size: 20px;
 `
 
 const PollItem: FC<Props> = ({ value }) => {

@@ -2,6 +2,7 @@ import { FC, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Id } from '../App'
 import PollItem from '../components/Poll/PollItem'
+import PollSlider from '../components/Poll/PollSlider'
 import { getSchoolTimeTable, getTodayTime } from '../time/times'
 import { isValidId } from '../util'
 
@@ -12,10 +13,18 @@ interface Props {
 
 const Container = styled.div`
   width: 400px;
-  margin: 130px auto 0px auto;
+  margin: 70px auto 0px auto;
   padding: 20px;
   border-radius: 5px;
   background-color: skyblue;
+  display: flex;
+  flex-direction: column;
+`
+
+const PollContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 `
 
 const Poll: FC<Props> = ({ id, school }) => {
@@ -42,7 +51,10 @@ const Poll: FC<Props> = ({ id, school }) => {
   }, [school, id])
 
   const polls = timeTable.map((time, index) => (
-    <PollItem value={time} key={index} />
+    <PollContainer key={index}>
+      <PollItem value={time} />
+      <PollSlider />
+    </PollContainer>
   ))
 
   return (
