@@ -16,7 +16,6 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^16.9.4",
     "@types/node": "^16.9.6",
     "@types/react-router": "^5.1.16",
     "electron-is-dev": "^2.0.0",

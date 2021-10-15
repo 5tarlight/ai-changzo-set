@@ -10,9 +10,9 @@ interface Props {
 const Item = styled.div`
   color: white;
   float: right;
-  line-height: 60px;
-  margin-right: 50px;
+  line-height: 64px;
   font-size: 24px;
+  margin-left: 20px;
 
   &:hover {
     cursor: pointer;
