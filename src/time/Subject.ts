@@ -61,6 +61,8 @@ const Subject = {
   CREATIVE_EXP: '창체',
   SELF_GOVERN: '자치',
   CAREER: '진로',
+  CA: 'CA',
+  DANCE: '무용',
 
   LUNCH: '점심',
 

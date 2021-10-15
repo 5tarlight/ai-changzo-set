@@ -15,21 +15,23 @@ const Image = styled.div`
   height: 500px;
   float: right;
   margin-right: 50px;
-  margin-top: -130px;
 `
 
 const TableImg: FC<Props> = ({ grade, clazz }) => {
   let imgBackStyle = {}
   if (isValidId({ grade, clazz, no: 1 }))
     imgBackStyle = {
-      background: `rgba(0, 0, 0, .65) url(${imgs[grade - 1][clazz - 1]})`,
+      backgroundImage: `url(${imgs[grade - 1][clazz - 1]})`,
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center center',
+      marginTop: '50px',
     }
   else
     imgBackStyle = {
       display: 'none',
+      width: '0px',
+      height: '0px',
     }
 
   return <Image style={imgBackStyle} />
