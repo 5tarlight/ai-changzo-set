@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Id } from '../App'
 import PollItem from '../components/Poll/PollItem'
 import PollSlider from '../components/Poll/PollSlider'
+import SubmitBtn from '../components/Poll/SubmitBtn'
 import { getSchoolTimeTable, getTodayTime } from '../time/times'
 import { isValidId } from '../util'
 
@@ -59,7 +60,16 @@ const Poll: FC<Props> = ({ id, school }) => {
 
   return (
     <Container>
-      {err ? <>Err</> : isValidId(id) ? polls : <div>Login First</div>}
+      {err ? (
+        <>Err</>
+      ) : isValidId(id) ? (
+        <>
+          {polls}
+          <SubmitBtn />
+        </>
+      ) : (
+        <div>Login First</div>
+      )}
     </Container>
   )
 }
