@@ -42,7 +42,8 @@ const Header: FC<Props> = ({ saveClass, id, school, setSchool }) => {
         {/* <HeaderItem to="/login" value="로그인" /> */}
         {/* <HeaderItem to="/help" value="Help" /> */}
         <>
-          <HeaderItem to="/poll" value="평가하기" />
+          <HeaderItem to="/poll" value="평가" />
+          <HeaderItem to="/stat" value="통계" />
           <SchoolSelect school={school} setSchool={setSchool} />
           <ClassInput value={classNo} setValue={setClass} />
           <LoginBtn onClick={() => saveClass(classNo)} />

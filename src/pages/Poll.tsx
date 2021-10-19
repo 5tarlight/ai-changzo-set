@@ -4,6 +4,8 @@ import { Id } from '../App'
 import PollItem from '../components/Poll/PollItem'
 import PollSlider from '../components/Poll/PollSlider'
 import SubmitBtn from '../components/Poll/SubmitBtn'
+import hashHistory from '../hashHistory'
+import { updateStat } from '../stat/stat'
 import { getSchoolTimeTable, getTodayTime } from '../time/times'
 import { isValidId } from '../util'
 
@@ -77,7 +79,12 @@ const Poll: FC<Props> = ({ id, school }) => {
     </PollContainer>
   ))
 
-  const handleSubmit = () => {}
+  const handleSubmit = () => {
+    values.forEach((v, i) => {
+      updateStat(timeTable[i], v)
+    })
+    hashHistory.push('/stat')
+  }
 
   return (
     <Container>
@@ -86,7 +93,7 @@ const Poll: FC<Props> = ({ id, school }) => {
       ) : isValidId(id) ? (
         <>
           {polls}
-          <SubmitBtn />
+          <SubmitBtn handleSubmit={handleSubmit} />
         </>
       ) : (
         <div>Login First</div>
