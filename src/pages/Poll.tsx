@@ -31,6 +31,16 @@ const PollContainer = styled.div`
 const Poll: FC<Props> = ({ id, school }) => {
   const [timeTable, setTimeTable] = useState<string[]>([])
   const [err, setErr] = useState(false)
+  const [values, setValues] = useState<number[]>([])
+
+  const initTimeTable = (list: string[]) => {
+    const arr: number[] = []
+    for (let i = 0; i < list.length; i++) {
+      arr.push(3)
+    }
+    setValues(arr)
+    setTimeTable(list)
+  }
 
   useEffect(() => {
     if (isValidId(id)) {
@@ -43,7 +53,7 @@ const Poll: FC<Props> = ({ id, school }) => {
         setErr(true)
       }
 
-      setTimeTable(
+      initTimeTable(
         getTodayTime(
           (getSchoolTimeTable(school) || [])[id.grade - 1][id.clazz - 1]
         ) || []
@@ -51,12 +61,23 @@ const Poll: FC<Props> = ({ id, school }) => {
     }
   }, [school, id])
 
+  const updateValue = (v: number, i: number) => {
+    const arr = [...values]
+    arr[i] = v
+    setValues(arr)
+  }
+
   const polls = timeTable.map((time, index) => (
     <PollContainer key={index}>
       <PollItem value={time} />
-      <PollSlider />
+      <PollSlider
+        value={values[index]}
+        handleChange={v => updateValue(v, index)}
+      />
     </PollContainer>
   ))
+
+  const handleSubmit = () => {}
 
   return (
     <Container>
