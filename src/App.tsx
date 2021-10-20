@@ -3,6 +3,8 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import { GlobalStyle } from './styles/GlobalStyle'
 import Home from './pages/Home'
+import Poll from './pages/Poll'
+import Stat from './pages/Stat'
 
 export interface Id {
   grade: number
@@ -97,6 +99,12 @@ export function App() {
             exact
             component={() => <Home id={id} school={school} />}
           />
+          <Route
+            path="/poll"
+            exact
+            component={() => <Poll id={id} school={school} />}
+          />
+          <Route path="/stat" exact component={() => <Stat />} />
         </Switch>
       </HashRouter>
     </>

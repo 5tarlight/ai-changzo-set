@@ -1,11 +1,11 @@
 Arguments: 
-  /opt/homebrew/Cellar/node/16.6.0/bin/node /opt/homebrew/bin/yarn
+  /opt/homebrew/Cellar/node/16.6.0/bin/node /Users/yeahx4/.yarn/bin/yarn.js add @synk/protect -D
 
 PATH: 
-  /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
+  /Users/yeahx4/.yarn/bin:/Users/yeahx4/.config/yarn/global/node_modules/.bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
 
 Yarn version: 
-  1.22.11
+  1.22.15
 
 Node version: 
   16.6.0
@@ -14,12 +14,17 @@ Platform:
   darwin arm64
 
 Trace: 
-  SyntaxError: /Users/yeahx4/coding/aicodist/set/package.json: Unexpected string in JSON at position 782
-      at JSON.parse (<anonymous>)
-      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:310:30)
-      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/@synk%2fprotect: Not found
+      at Request.params.callback [as _callback] (/Users/yeahx4/.yarn/lib/cli.js:67031:18)
+      at Request.self.callback (/Users/yeahx4/.yarn/lib/cli.js:140885:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (/Users/yeahx4/.yarn/lib/cli.js:141857:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (/Users/yeahx4/.yarn/lib/cli.js:141779:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1331:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
 npm manifest: 
   {
@@ -40,16 +45,17 @@ npm manifest:
     "keywords": [],
     "license": "MIT",
     "dependencies": {
-      "@snyk/protect": "latest",
-      "@types/node": "^16.9.4",
+      "@types/node": "^16.9.6",
       "@types/react-router": "^5.1.16",
       "electron-is-dev": "^2.0.0",
+      "file-loader": "^6.2.0",
+      "rc-slider": "^9.7.4",
       "react": "17.0.2",
       "react-dom": "17.0.2",
       "react-hot-loader": "4.13.0",
       "react-router": "^5.2.1",
-      "styled-components": "5.3.1"
       "react-router-dom": "^5.2.1",
+      "styled-components": "5.3.1"
     },
     "devDependencies": {
       "@babel/core": "7.14.6",
@@ -1318,17 +1324,17 @@ Lockfile:
     dependencies:
       regenerator-runtime "^0.13.4"
   
+  "@babel/runtime@^7.10.1", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13":
+    version "7.15.4"
+    resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
+    integrity sha512-99catp6bHCaxr4sJ/DbTGgHS4+Rs2RVd2g7iOap6SLGPDknRK9ztKNsE/Fg6QhSeh1FGE5f6gHGQmvvn3I3xhw==
+    dependencies:
+      regenerator-runtime "^0.13.4"
+  
   "@babel/runtime@^7.10.2", "@babel/runtime@^7.8.4":
     version "7.10.3"
     resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.3.tgz#670d002655a7c366540c67f6fd3342cd09500364"
     integrity sha512-RzGO0RLSdokm9Ipe/YD+7ww8X2Ro79qiXZF3HU9ljrM+qnJmH1Vqth+hbiQZy761LnMJTMitHDuKVYTk3k4dLw==
-    dependencies:
-      regenerator-runtime "^0.13.4"
-  
-  "@babel/runtime@^7.12.13":
-    version "7.15.4"
-    resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
-    integrity sha512-99catp6bHCaxr4sJ/DbTGgHS4+Rs2RVd2g7iOap6SLGPDknRK9ztKNsE/Fg6QhSeh1FGE5f6gHGQmvvn3I3xhw==
     dependencies:
       regenerator-runtime "^0.13.4"
   
@@ -2055,11 +2061,6 @@ Lockfile:
     dependencies:
       "@sinonjs/commons" "^1.7.0"
   
-  "@snyk/protect@latest":
-    version "1.704.0"
-    resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.704.0.tgz#afcebc4e073d0732fd327a23fae0285f34819f90"
-    integrity sha512-F7c0VnzokeGo3lv+Zv0FBhfmOT5f61Hd0nxlgNptsQDoDy3vuipGQqucIwobZIUxkEehR54hEma83v+lYGCj6A==
-  
   "@szmarczak/http-timer@^1.1.2":
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -2350,10 +2351,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.3.tgz#6d327abaa4be34a74e421ed6409a0ae2f47f4c3d"
     integrity sha512-e6ZowgGJmTuXa3GyaPbTGxX17tnThl2aSSizrFthQ7m9uLGZBXiGhgE55cjRZTF5kjZvYn9EOPOMljdjwbflxw==
   
-  "@types/node@^16.9.4":
-    version "16.9.4"
-    resolved "https://registry.yarnpkg.com/@types/node/-/node-16.9.4.tgz#a12f0ee7847cf17a97f6fdf1093cb7a9af23cca4"
-    integrity sha512-KDazLNYAGIuJugdbULwFZULF9qQ13yNWEBFnfVpqlpgAAo6H/qnM9RjBgh0A0kmHf3XxAKLdN5mTIng9iUvVLA==
+  "@types/node@^16.9.6":
+    version "16.10.4"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-16.10.4.tgz#592f12b0b5f357533ddc3310b0176d42ea3e45d1"
+    integrity sha512-EITwVTX5B4nDjXjGeQAfXOrm+Jn+qNjDmyDRtWoD+wZsl/RDPRTFRKivs4Mt74iOFlLOrE5+Kf+p5yjyhm3+cA==
   
   "@types/prettier@^2.1.5":
     version "2.3.0"
@@ -3498,6 +3499,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.1.tgz#2fd46d9906a126965aa541345c499aaa18e8cd73"
     integrity sha512-jVamGdJPDeuQilKhvVn1h3knuMOZzr8QDnpk+M9aMlCaMkTDd6fBWPhiDqFvFZ07pL0liqabAiuy8SY4jGHeaw==
   
+  classnames@2.x, classnames@^2.2.1, classnames@^2.2.5, classnames@^2.2.6:
+    version "2.3.1"
+    resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+    integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
+  
   clean-css@^4.2.3:
     version "4.2.3"
     resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
@@ -4123,6 +4129,11 @@ Lockfile:
     version "0.5.6"
     resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.5.6.tgz#3f5d43b52c7a3bd68b5fb63fa47b4e4c1fdf65a9"
     integrity sha512-DplGLZd8L1lN64jlT27N9TVSESFR5STaEJvX+thCby7fuCHonfPpAlodYc3vuUYbDuDec5w8AMP7oCM5TWFsqw==
+  
+  dom-align@^1.7.0:
+    version "1.12.2"
+    resolved "https://registry.yarnpkg.com/dom-align/-/dom-align-1.12.2.tgz#0f8164ebd0c9c21b0c790310493cd855892acd4b"
+    integrity sha512-pHuazgqrsTFrGU2WLDdXxCFabkdQDx72ddkraZNih1KsMcN5qsRSTR9O4VJRlwTPCPb5COYg3LOfiMHHcPInHg==
   
   dom-converter@^0.2:
     version "0.2.0"
@@ -4959,6 +4970,14 @@ Lockfile:
     integrity sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==
     dependencies:
       flat-cache "^3.0.4"
+  
+  file-loader@^6.2.0:
+    version "6.2.0"
+    resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-6.2.0.tgz#baef7cf8e1840df325e4390b4484879480eebe4d"
+    integrity sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==
+    dependencies:
+      loader-utils "^2.0.0"
+      schema-utils "^3.0.0"
   
   filename-reserved-regex@^2.0.0:
     version "2.0.0"
@@ -6889,6 +6908,15 @@ Lockfile:
       emojis-list "^3.0.0"
       json5 "^1.0.1"
   
+  loader-utils@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
+    integrity sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==
+    dependencies:
+      big.js "^5.2.2"
+      emojis-list "^3.0.0"
+      json5 "^2.1.2"
+  
   locate-path@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -8312,6 +8340,66 @@ Lockfile:
       iconv-lite "0.4.24"
       unpipe "1.0.0"
   
+  rc-align@^4.0.0:
+    version "4.0.11"
+    resolved "https://registry.yarnpkg.com/rc-align/-/rc-align-4.0.11.tgz#8198c62db266bc1b8ef05e56c13275bf72628a5e"
+    integrity sha512-n9mQfIYQbbNTbefyQnRHZPWuTEwG1rY4a9yKlIWHSTbgwI+XUMGRYd0uJ5pE2UbrNX0WvnMBA1zJ3Lrecpra/A==
+    dependencies:
+      "@babel/runtime" "^7.10.1"
+      classnames "2.x"
+      dom-align "^1.7.0"
+      lodash "^4.17.21"
+      rc-util "^5.3.0"
+      resize-observer-polyfill "^1.5.1"
+  
+  rc-motion@^2.0.0:
+    version "2.4.4"
+    resolved "https://registry.yarnpkg.com/rc-motion/-/rc-motion-2.4.4.tgz#e995d5fa24fc93065c24f714857cf2677d655bb0"
+    integrity sha512-ms7n1+/TZQBS0Ydd2Q5P4+wJTSOrhIrwNxLXCZpR7Fa3/oac7Yi803HDALc2hLAKaCTQtw9LmQeB58zcwOsqlQ==
+    dependencies:
+      "@babel/runtime" "^7.11.1"
+      classnames "^2.2.1"
+      rc-util "^5.2.1"
+  
+  rc-slider@^9.7.4:
+    version "9.7.4"
+    resolved "https://registry.yarnpkg.com/rc-slider/-/rc-slider-9.7.4.tgz#430c860723bf6445ebf53517b550417a2f25eed1"
+    integrity sha512-pjLKLiDKiaL7/pNywfIBD+lDo5TtVo05KuIBSWEIoqu6FHh6IMWvthCiaODuYaVs3RLeF2nXOP5AjkD2Lt2Rwg==
+    dependencies:
+      "@babel/runtime" "^7.10.1"
+      classnames "^2.2.5"
+      rc-tooltip "^5.0.1"
+      rc-util "^5.0.0"
+      shallowequal "^1.1.0"
+  
+  rc-tooltip@^5.0.1:
+    version "5.1.1"
+    resolved "https://registry.yarnpkg.com/rc-tooltip/-/rc-tooltip-5.1.1.tgz#94178ed162d0252bc4993b725f5dc2ac0fccf154"
+    integrity sha512-alt8eGMJulio6+4/uDm7nvV+rJq9bsfxFDCI0ljPdbuoygUscbsMYb6EQgwib/uqsXQUvzk+S7A59uYHmEgmDA==
+    dependencies:
+      "@babel/runtime" "^7.11.2"
+      rc-trigger "^5.0.0"
+  
+  rc-trigger@^5.0.0:
+    version "5.2.10"
+    resolved "https://registry.yarnpkg.com/rc-trigger/-/rc-trigger-5.2.10.tgz#8a0057a940b1b9027eaa33beec8a6ecd85cce2b1"
+    integrity sha512-FkUf4H9BOFDaIwu42fvRycXMAvkttph9AlbCZXssZDVzz2L+QZ0ERvfB/4nX3ZFPh1Zd+uVGr1DEDeXxq4J1TA==
+    dependencies:
+      "@babel/runtime" "^7.11.2"
+      classnames "^2.2.6"
+      rc-align "^4.0.0"
+      rc-motion "^2.0.0"
+      rc-util "^5.5.0"
+  
+  rc-util@^5.0.0, rc-util@^5.2.1, rc-util@^5.3.0, rc-util@^5.5.0:
+    version "5.14.0"
+    resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-5.14.0.tgz#52c650e27570c2c47f7936c7d32eaec5212492a8"
+    integrity sha512-2vy6/Z1BJUcwLjm/UEJb/htjUTQPigITUIemCcFEo1fQevAumc9sA32x2z5qyWoa9uhrXbiAjSDpPIUqyg65sA==
+    dependencies:
+      "@babel/runtime" "^7.12.5"
+      react-is "^16.12.0"
+      shallowequal "^1.1.0"
+  
   rc@^1.2.7:
     version "1.2.8"
     resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
@@ -8658,6 +8746,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
     integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+  
+  resize-observer-polyfill@^1.5.1:
+    version "1.5.1"
+    resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+    integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
   
   resolve-alpn@^1.0.0:
     version "1.1.2"
