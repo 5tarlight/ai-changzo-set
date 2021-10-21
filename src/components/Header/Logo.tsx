@@ -31,7 +31,7 @@ const Logo: FC<{}> = () => {
   return (
     <>
       {/* @TODO insert real img based logo. svg preferred */}
-      <Container onClick={handleClick}>S.E.T</Container>
+      <Container onClick={handleClick}>S.E.T.</Container>
     </>
   )
 }
