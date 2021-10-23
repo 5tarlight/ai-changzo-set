@@ -37,6 +37,11 @@ function createWindow() {
     mainWindow = null
   })
 
+  mainWindow.webContents.on('new-window', function (e, url) {
+    e.preventDefault()
+    require('electron').shell.openExternal(url)
+  })
+
   const template: (MenuItemConstructorOptions | MenuItem)[] = []
 
   if (isDev) {

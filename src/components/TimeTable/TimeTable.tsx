@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Id } from '../../App'
 import { isValidId } from '../../util'
 import { isValidSchool } from '../../shcool/School'
-import { getSchoolTimeTable, getTodayTime } from '../../time/times'
+import { getSchoolTimeTable, getTodayTime, getZoomLink } from '../../time/times'
 
 interface Props {
   id: Id
@@ -19,7 +19,9 @@ interface ElementProps {
 const Container = styled.div`
   margin-top: 20px;
 `
-const Element = styled.div<ElementProps>`
+const Element = styled.a<ElementProps>`
+  color: black;
+  text-decoration: none;
   ${({ done }) => {
     if (done) return 'color: #b4b4b4;'
   }}
@@ -57,7 +59,13 @@ const TimeTable: FC<Props> = ({
     if (!table) return notFound
 
     const tables = table.map((t, i) => (
-      <Element key={i} done={i < curTime - 1} current={i == curTime - 1}>
+      <Element
+        key={i}
+        done={i < curTime - 1}
+        current={i == curTime - 1}
+        href={getZoomLink(t)}
+        target="_blank"
+      >
         {i + 1}. {t}
       </Element>
     ))

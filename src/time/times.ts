@@ -127,3 +127,9 @@ export const getTodayTime = (table: TimeTable) => {
       return null
   }
 }
+
+export const getZoomLink = (subject: string, type: number = 0) => {
+  const zoom = 'https://zoom.us/j/'
+  // TODO : Real Link
+  return zoom
+}
