@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styled from 'styled-components'
-import { getToday, getTodayKo } from '../../time/times'
+import { getTodayKo } from '../../time/times'
 
 interface Props {}
 interface State {
