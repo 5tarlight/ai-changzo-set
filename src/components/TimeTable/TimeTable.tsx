@@ -18,10 +18,17 @@ interface ElementProps {
 
 const Container = styled.div`
   margin-top: 20px;
+  margin-left: 30px;
 `
 const Element = styled.a<ElementProps>`
   color: black;
   text-decoration: none;
+  display: block;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
   ${({ done }) => {
     if (done) return 'color: #b4b4b4;'
   }}

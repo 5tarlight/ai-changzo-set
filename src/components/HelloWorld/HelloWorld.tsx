@@ -9,6 +9,7 @@ interface Props {
 
 const Hello = styled.div`
   font-size: 60px;
+  margin-left: 20px;
 `
 
 const HelloWorld: FC<Props> = ({ id: { clazz, grade, no } }) => {

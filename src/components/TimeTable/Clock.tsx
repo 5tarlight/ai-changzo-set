@@ -9,6 +9,7 @@ interface State {
 
 const Container = styled.div`
   font-size: 36px;
+  margin-left: 20px;
 `
 const DateContainer = styled.div`
   font-size: 24px;
