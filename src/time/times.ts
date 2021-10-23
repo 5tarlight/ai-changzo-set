@@ -104,7 +104,7 @@ export const getToday = () => {
 }
 
 export const getTodayKo = () => {
-  const day = new Date().getDay()
+  const day = new Date(2021, 9, 22, 0, 0, 0).getDay()
   return ['월', '화', '수', '목', '금', '토', '일'][day - 1]
 }
 
@@ -124,7 +124,7 @@ export const getTodayTime = (table: TimeTable) => {
       return table.FRI
 
     default:
-      return null
+      return table.THU
   }
 }
 

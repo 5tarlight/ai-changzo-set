@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import styled from 'styled-components'
-import { getToday, getTodayKo } from '../../time/times'
+import { getTodayKo } from '../../time/times'
 
 interface Props {}
 interface State {
@@ -8,6 +8,7 @@ interface State {
 }
 
 const Container = styled.div`
+  margin-left: 20px;
   font-size: 36px;
 `
 const DateContainer = styled.div`
@@ -16,7 +17,8 @@ const DateContainer = styled.div`
 const TimeContainer = styled.div``
 
 class Clock extends Component<Props, State> {
-  initialDate = new Date()
+  initialDate = new Date(2021, 9, 22, 0, 0, 0)
+  sec = 0
 
   date = `${this.initialDate.getFullYear()}.${
     this.initialDate.getMonth() + 1
@@ -43,7 +45,7 @@ class Clock extends Component<Props, State> {
     })
 
     this.intervalId = setInterval(() => {
-      const date = new Date()
+      const date = new Date(2021, 9, 22, 14, 15, this.sec++)
       this.setState({
         time: `${this.formatTime(date.getHours())}:${this.formatTime(
           date.getMinutes()

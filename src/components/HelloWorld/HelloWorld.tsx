@@ -8,6 +8,8 @@ interface Props {
 }
 
 const Hello = styled.div`
+  margin-top: 10px;
+  margin-left: 20px;
   font-size: 60px;
 `
 
