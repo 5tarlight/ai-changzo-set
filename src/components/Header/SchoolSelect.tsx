@@ -9,6 +9,7 @@ interface Props {
 
 const Select = styled.select`
   display: inline-block;
+  height: 30px;
 `
 
 const SchoolSelect: FC<Props> = ({ setSchool, school }) => {

@@ -8,6 +8,7 @@ interface Props {
 
 const Input = styled.input`
   width: 50px;
+  height: 30px;
 `
 
 const ClassInput: FC<Props> = ({ value, setValue }) => {
