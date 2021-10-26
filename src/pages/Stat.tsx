@@ -17,7 +17,9 @@ const Container = styled.div`
 const Stat: FC<Props> = () => {
   const keys = Object.keys(storedStat)
   const stats = keys.map((k, i) => {
-    return <StatItem txt={k} value={Math.round(storedStat[k].value)} />
+    return (
+      <StatItem txt={k} value={Math.round(storedStat[k].value * 10) / 10} />
+    )
   })
   return <Container>{stats}</Container>
 }
