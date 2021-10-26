@@ -30,7 +30,7 @@ export const updateStat = (key: string, value: number) => {
   if (storedStat[key]) {
     storedStat[key].value =
       (storedStat[key].value * storedStat[key].count + value) /
-      storedStat[key].count++
+      ++storedStat[key].count
   } else {
     storedStat[key] = {
       count: 1,
