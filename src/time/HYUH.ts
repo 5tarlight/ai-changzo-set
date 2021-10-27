@@ -6,7 +6,14 @@ const HYUH: TimeTable[][] = [
     // 1st grade
     {
       // 1
-      MON: [Subject.COMMON_KOREAN],
+      MON: [
+        Subject.KOREAN_HISTORY,
+        Subject.ENGLISH,
+        Subject.COMMON_KOREAN,
+        Subject.COMMON_SOCIAL,
+        Subject.COMMON_MATH,
+        Subject.SCIENTIFIC_RESEARCH,
+      ],
       TUE: [Subject.COMMON_KOREAN],
       WED: [Subject.COMMON_KOREAN],
       THU: [Subject.COMMON_KOREAN],
