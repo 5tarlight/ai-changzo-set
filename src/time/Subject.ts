@@ -51,7 +51,7 @@ const Subject = {
   SPORTS_LIFE: '스포츠 생활',
   PHYSICAL_EDUCATION_RESEARCH: '체육 탐구',
   MUSIC: '음악',
-  ART: '음악',
+  ART: '미술',
   PLAY: '연극',
 
   TECH_AND_HOME: '기술 가정',
