@@ -24,6 +24,7 @@ const Element = styled.a<ElementProps>`
   color: black;
   text-decoration: none;
   display: block;
+  width: 250px;
 
   &:hover {
     background-color: #f0f0f0;
