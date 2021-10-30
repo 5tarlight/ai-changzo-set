@@ -2,6 +2,7 @@ import { FC } from 'react'
 import StatItem from '../components/Stat/StatItem'
 import storedStat from '../stat/stat'
 import styled from 'styled-components'
+import hashHistory from '../hashHistory'
 
 interface Props {}
 
@@ -24,13 +25,25 @@ const Stat: FC<Props> = () => {
   const keys = Object.keys(storedStat)
   const stats = keys.map((k, i) => {
     return (
-      <StatItem txt={k} value={Math.round(storedStat[k].value * 10) / 10} />
+      <StatItem
+        txt={k}
+        key={i}
+        value={Math.round(storedStat[k].value * 10) / 10}
+      />
     )
   })
   return (
     <Container>
       {stats}
-      <Button>그래프로 보기</Button>
+      <Button
+        onClick={e => {
+          e.preventDefault()
+          e.stopPropagation()
+          hashHistory.push('/graph')
+        }}
+      >
+        그래프로 보기
+      </Button>
     </Container>
   )
 }
