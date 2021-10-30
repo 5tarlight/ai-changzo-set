@@ -13,7 +13,7 @@ const StatGraph: FC = () => {
   const data = keys.map((k, i) => {
     return {
       name: k.length > 5 ? k.slice(0, 4) + '...' : k,
-      value: storedStat[k].value,
+      value: Math.floor(storedStat[k].value * 10) / 10,
     }
   })
 

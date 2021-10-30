@@ -24,8 +24,9 @@ const imgs = [
 ]
 
 const Image = styled.div`
-  width: 320px;
+  width: 500px;
   height: 500px;
+  background-size: 500px;
   float: right;
   margin-right: 50px;
 `
@@ -35,7 +36,7 @@ const TableImg: FC<Props> = ({ grade, clazz }) => {
   if (isValidId({ grade, clazz, no: 1 }))
     imgBackStyle = {
       backgroundImage: `url(${imgs[grade - 1][clazz - 1]})`,
-      backgroundSize: 'cover',
+      backgroundSize: 'contain',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center center',
       marginTop: '50px',
