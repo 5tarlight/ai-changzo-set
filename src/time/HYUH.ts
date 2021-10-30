@@ -192,6 +192,102 @@ const HYUH: TimeTable[][] = [
         Subject.COMMON_SCIENCE,
       ],
     },
+    {
+      // 5
+      MON: [],
+      TUE: [
+        Subject.COMMON_SCIENCE,
+        Subject.COMMON_SOCIAL,
+        Subject.ART,
+        Subject.PHYSICAL_EDUCATION,
+        Subject.COMMON_KOREAN,
+        Subject.ENGLISH,
+        Subject.COMMON_MATH,
+      ],
+      WED: [],
+      THU: [],
+      FRI: [],
+    },
+    {
+      // 6
+      MON: [],
+      TUE: [
+        Subject.ENGLISH,
+        Subject.COMMON_MATH,
+        Subject.COMMON_KOREAN,
+        Subject.KOREAN_HISTORY,
+        Subject.COMMON_SCIENCE,
+        Subject.PHYSICAL_EDUCATION,
+        Subject.COMMON_SOCIAL,
+      ],
+      WED: [],
+      THU: [],
+      FRI: [],
+    },
+    {
+      // 7
+      MON: [],
+      TUE: [
+        Subject.COMMON_SOCIAL,
+        Subject.COMMON_SCIENCE,
+        Subject.COMMON_MATH,
+        Subject.MUSIC,
+        Subject.COMPUTER_INFORMATION,
+        Subject.DANCE,
+        Subject.COMMON_KOREAN,
+      ],
+      WED: [],
+      THU: [],
+      FRI: [],
+    },
+    {
+      // 8
+      MON: [],
+      TUE: [
+        Subject.ENGLISH,
+        Subject.KOREAN_HISTORY,
+        Subject.CAREER,
+        Subject.CREATIVE_EXP,
+        Subject.COMMON_KOREAN,
+        Subject.PHYSICAL_EDUCATION,
+        Subject.COMMON_MATH,
+      ],
+      WED: [],
+      THU: [],
+      FRI: [],
+    },
+    {
+      // 9
+      MON: [],
+      TUE: [
+        Subject.KOREAN_HISTORY,
+        Subject.SCIENTIFIC_RESEARCH,
+        Subject.COMMON_KOREAN,
+        Subject.ENGLISH,
+        Subject.COMMON_SOCIAL,
+        Subject.COMMON_MATH,
+        Subject.MUSIC,
+      ],
+      WED: [],
+      THU: [],
+      FRI: [],
+    },
+    {
+      // 10
+      MON: [],
+      TUE: [
+        Subject.MUSIC,
+        Subject.COMMON_MATH,
+        Subject.ENGLISH,
+        Subject.COMPUTER_INFORMATION,
+        Subject.COMMON_SCIENCE,
+        Subject.COMMON_SOCIAL,
+        Subject.KOREAN_HISTORY,
+      ],
+      WED: [],
+      THU: [],
+      FRI: [],
+    },
   ],
   // [
   //   // 2nd grade
