@@ -14,6 +14,12 @@ const Container = styled.div`
   font-size: 22px;
 `
 
+const Button = styled.button`
+  margin: 20px auto;
+  font-size: 22px;
+  padding: 5px;
+`
+
 const Stat: FC<Props> = () => {
   const keys = Object.keys(storedStat)
   const stats = keys.map((k, i) => {
@@ -21,7 +27,12 @@ const Stat: FC<Props> = () => {
       <StatItem txt={k} value={Math.round(storedStat[k].value * 10) / 10} />
     )
   })
-  return <Container>{stats}</Container>
+  return (
+    <Container>
+      {stats}
+      <Button>그래프로 보기</Button>
+    </Container>
+  )
 }
 
 export default Stat

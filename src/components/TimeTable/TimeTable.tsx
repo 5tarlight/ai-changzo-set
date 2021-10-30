@@ -64,6 +64,7 @@ const TimeTable: FC<Props> = ({
     }
 
     const table = getTodayTime(timeTable[grade - 1][clazz - 1])
+    console.log(table)
     if (!table) return notFound
 
     const tables = table.map((t, i) => (

@@ -8,8 +8,8 @@ interface State {
 }
 
 const Container = styled.div`
-  font-size: 36px;
   margin-left: 20px;
+  font-size: 36px;
 `
 const DateContainer = styled.div`
   font-size: 24px;
@@ -17,7 +17,8 @@ const DateContainer = styled.div`
 const TimeContainer = styled.div``
 
 class Clock extends Component<Props, State> {
-  initialDate = new Date()
+  initialDate = new Date(2021, 9, 23, 0, 0, 0)
+  sec = 0
 
   date = `${this.initialDate.getFullYear()}.${
     this.initialDate.getMonth() + 1
@@ -44,7 +45,8 @@ class Clock extends Component<Props, State> {
     })
 
     this.intervalId = setInterval(() => {
-      const date = new Date()
+      if (this.sec === 60) this.sec = 0
+      const date = new Date(2021, 9, 22, 14, 15, this.sec++)
       this.setState({
         time: `${this.formatTime(date.getHours())}:${this.formatTime(
           date.getMinutes()
