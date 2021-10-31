@@ -22,7 +22,7 @@ const StatGraph: FC = () => {
       <BarChart width={500} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis max={5} />
         <Tooltip />
         <Bar dataKey="value" fill="#8884d8" />
       </BarChart>
