@@ -9,7 +9,7 @@ interface Props {
 
 const Container = styled.div`
   margin-bottom: 5px;
-  cursor: pointer;
+  /* cursor: pointer; */
 `
 
 const StatItem: FC<Props> = ({ txt, value }) => {
