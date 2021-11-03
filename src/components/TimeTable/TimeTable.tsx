@@ -37,7 +37,7 @@ const Element = styled.a<ElementProps>`
   ${({ current }) => {
     if (current) return 'color: orange;'
   }}
-` // TODO : Replace with TimeCell component
+`
 const SchoolError = styled.div``
 
 const TimeTable: FC<Props> = ({
