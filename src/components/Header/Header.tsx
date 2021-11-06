@@ -50,7 +50,11 @@ const Header: FC<Props> = ({ saveClass, id, school, setSchool }) => {
         <HeaderItem to="/stat" value="통계" />
         <SelectionSec>
           <SchoolSelect school={school} setSchool={setSchool} />
-          <ClassInput value={classNo} setValue={setClass} />
+          <ClassInput
+            value={classNo}
+            setValue={setClass}
+            handleSubmit={() => saveClass(classNo)}
+          />
           <LoginBtn onClick={() => saveClass(classNo)} />
         </SelectionSec>
       </InputSec>
