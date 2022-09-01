@@ -16,9 +16,9 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^16.10.9",
-    "@types/react-router": "^5.1.16",
-    "css-loader": "^6.4.0",
+    "@types/node": "^16.11.9",
+    "@types/react-router": "^5.1.17",
+    "css-loader": "^6.5.1",
     "electron-is-dev": "^2.0.0",
     "file-loader": "^6.2.0",
     "rc-slider": "^9.7.4",
@@ -27,9 +27,9 @@
     "react-hot-loader": "4.13.0",
     "react-router": "^5.2.1",
     "react-router-dom": "^5.2.1",
-    "recharts": "^2.1.6",
     "style-loader": "^3.3.1",
-    "styled-components": "5.3.1"
+    "recharts": "^2.1.7",
+    "styled-components": "5.3.3"
   },
   "devDependencies": {
     "@babel/core": "7.14.6",
