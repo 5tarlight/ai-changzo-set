@@ -5,6 +5,8 @@ import { GlobalStyle } from './styles/GlobalStyle'
 import Home from './pages/Home'
 import Poll from './pages/Poll'
 import Stat from './pages/Stat'
+import StatGraph from './pages/StatGraph'
+import ClassStat from './pages/ClassStat'
 
 export interface Id {
   grade: number
@@ -105,6 +107,8 @@ export function App() {
             component={() => <Poll id={id} school={school} />}
           />
           <Route path="/stat" exact component={() => <Stat />} />
+          <Route path="/graph" exact component={() => <StatGraph />} />
+          <Route path="/graph/:subject" exact component={() => <ClassStat />} />
         </Switch>
       </HashRouter>
     </>

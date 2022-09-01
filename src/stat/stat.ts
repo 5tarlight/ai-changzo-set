@@ -1,5 +1,3 @@
-import Subject from '../time/Subject'
-
 interface Stat {
   [key: string]: {
     count: number
@@ -7,24 +5,7 @@ interface Stat {
   }
 }
 
-const storedStat: Stat = {
-  [Subject.COMMON_KOREAN]: {
-    count: 3,
-    value: 4.5,
-  },
-  [Subject.COMMON_MATH]: {
-    count: 5,
-    value: 3.6,
-  },
-  [Subject.COMMON_KOREAN]: {
-    count: 6,
-    value: 2.6,
-  },
-  [Subject.COMMON_SCIENCE]: {
-    count: 5,
-    value: 4.8,
-  },
-}
+const storedStat: Stat = {}
 
 export const updateStat = (key: string, value: number) => {
   if (storedStat[key]) {

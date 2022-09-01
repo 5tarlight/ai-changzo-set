@@ -24,6 +24,7 @@ const Element = styled.a<ElementProps>`
   color: black;
   text-decoration: none;
   display: block;
+  width: 250px;
 
   &:hover {
     background-color: #f0f0f0;
@@ -36,7 +37,7 @@ const Element = styled.a<ElementProps>`
   ${({ current }) => {
     if (current) return 'color: orange;'
   }}
-` // TODO : Replace with TimeCell component
+`
 const SchoolError = styled.div``
 
 const TimeTable: FC<Props> = ({
@@ -63,6 +64,7 @@ const TimeTable: FC<Props> = ({
     }
 
     const table = getTodayTime(timeTable[grade - 1][clazz - 1])
+
     if (!table) return notFound
 
     const tables = table.map((t, i) => (

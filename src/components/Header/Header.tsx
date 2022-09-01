@@ -24,6 +24,11 @@ const Container = styled.div`
 const InputSec = styled.div`
   float: right;
   margin-right: 20px;
+  height: 30px;
+`
+
+const SelectionSec = styled.div`
+  float: right;
 `
 
 const Header: FC<Props> = ({ saveClass, id, school, setSchool }) => {
@@ -41,13 +46,17 @@ const Header: FC<Props> = ({ saveClass, id, school, setSchool }) => {
       <InputSec>
         {/* <HeaderItem to="/login" value="로그인" /> */}
         {/* <HeaderItem to="/help" value="Help" /> */}
-        <>
-          <HeaderItem to="/poll" value="평가" />
-          <HeaderItem to="/stat" value="통계" />
+        <HeaderItem to="/poll" value="평가" />
+        <HeaderItem to="/stat" value="통계" />
+        <SelectionSec>
           <SchoolSelect school={school} setSchool={setSchool} />
-          <ClassInput value={classNo} setValue={setClass} />
+          <ClassInput
+            value={classNo}
+            setValue={setClass}
+            handleSubmit={() => saveClass(classNo)}
+          />
           <LoginBtn onClick={() => saveClass(classNo)} />
-        </>
+        </SelectionSec>
       </InputSec>
     </Container>
   )

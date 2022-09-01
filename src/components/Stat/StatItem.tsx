@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
+import hashHistory from '../../hashHistory'
 
 interface Props {
   txt: string
@@ -8,11 +9,18 @@ interface Props {
 
 const Container = styled.div`
   margin-bottom: 5px;
+  /* cursor: pointer; */
 `
 
 const StatItem: FC<Props> = ({ txt, value }) => {
   return (
-    <Container>
+    <Container
+    // onClick={e => {
+    //   e.preventDefault()
+    //   e.stopPropagation()
+    //   hashHistory.push(`/graph/${txt}`)
+    // }}
+    >
       {txt} : {value}
     </Container>
   )

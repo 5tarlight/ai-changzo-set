@@ -4,6 +4,7 @@ import styled from 'styled-components'
 interface Props {
   value: string
   setValue(str: string): void
+  handleSubmit(): void
 }
 
 const Input = styled.input`
@@ -11,7 +12,7 @@ const Input = styled.input`
   height: 30px;
 `
 
-const ClassInput: FC<Props> = ({ value, setValue }) => {
+const ClassInput: FC<Props> = ({ value, setValue, handleSubmit }) => {
   const updateValue = (v: string) => {
     if (value.length === 0 && !(v === '1' || v === '2' || v === '3')) return
     const e = v.replace(/[^0-9]/g, '')
@@ -33,15 +34,12 @@ const ClassInput: FC<Props> = ({ value, setValue }) => {
       onChange={({ target: { value } }) => {
         updateValue(value)
       }}
-      // onChange={() => {}} // to disable devtool warning
-      // onKeyDown={e => {
-      //   const { key } = e
-      //   const nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-      //   if (nums.includes(key)) append(key)
-      //   else if (key == 'Backspace') remove()
-      // }}
+      onKeyPress={({ key }) => {
+        if (key === 'Enter') {
+          handleSubmit()
+        }
+      }}
     />
   )
 }
-
 export default ClassInput
