@@ -24,6 +24,10 @@ this will create executables fit to your os and architecture.
 ```bash
 yarn build
 ```
+Or, to make .exe or .app portable run below.
+```bash
+yarn package
+```
 
 ## Troubleshotting & Contact
 YEAHx4(5tarlight) <developerstarlight@gmail.com>
