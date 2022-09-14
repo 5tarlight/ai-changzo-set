@@ -18,7 +18,7 @@
   "dependencies": {
     "@types/node": "^16.11.47",
     "@types/react-router": "^5.1.17",
-    "css-loader": "^6.5.1",
+    "css-loader": "^6.7.1",
     "electron-is-dev": "^2.0.0",
     "file-loader": "^6.2.0",
     "rc-slider": "^9.7.4",
