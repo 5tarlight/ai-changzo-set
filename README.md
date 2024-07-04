@@ -1,5 +1,5 @@
 # S.E.T.
-S.E.T. means Sensory Educational System developed by YEAHx4(5tarligt) of HYUH Ai Codist. This program will support you and prevent you from getting distracted by online lecture tsunami. Check your timetable of the day and access online link immediately. And Test yourself with weekly, monthly analysis. Set your class.
+S.E.T. means Sensory Educational System developed by YEAHx4(5tarlight) of HYUH Ai Codist. This program serves you to support you and prevent you from getting distracted by online lecture tsunami. Check your timetable of the day and access online link immediately. Test yourself with weekly and monthly analysis. Set your class.
 
 ## Features
 - Auto timetable generator
